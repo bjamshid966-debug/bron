@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Красный шест — онлайн-запись в барбершоп</title>
+<meta name="description" content="Запишитесь на стрижку, бороду или бритьё онлайн: выберите услугу, мастера и свободное время.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pole" aria-hidden="true"></div>
+<header class="top">
+  <a class="logo" href="#top" id="brand"></a>
+  <nav><a href="#booking">Запись</a><a href="#my">Мои записи</a><a href="#contacts">Контакты</a></nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1>Стрижка без очереди.<br>Выберите время — мы ждём.</h1>
+    <p id="tagline"></p>
+    <a class="btn" href="#booking">Записаться онлайн</a>
+    <ul class="facts" id="facts"></ul>
+  </section>
+
+  <section id="booking" class="booking">
+    <div class="steps">
+      <fieldset><legend>1. Услуга</legend><div id="services" class="grid"></div></fieldset>
+      <fieldset><legend>2. Мастер</legend><div id="masters" class="grid"></div></fieldset>
+      <fieldset><legend>3. Дата</legend><div id="days" class="days"></div></fieldset>
+      <fieldset><legend>4. Время</legend><div id="slots" class="slots"></div><p id="slotsHint" class="hint"></p></fieldset>
+      <fieldset><legend>5. Ваши данные</legend>
+        <form id="form" novalidate>
+          <label>Имя<input id="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
+          <label>Телефон<input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00"></label>
+          <label>Комментарий<textarea id="note" rows="2" placeholder="Необязательно"></textarea></label>
+          <p id="error" class="error" role="alert"></p>
+        </form>
+      </fieldset>
+    </div>
+    <aside class="summary" aria-live="polite">
+      <h2>Ваша запись</h2>
+      <dl id="sum"></dl>
+      <div class="total"><span>Итого</span><b id="total">—</b></div>
+      <button class="btn" id="submit" form="form" type="submit">Подтвердить запись</button>
+      <p class="hint">Оплата в барбершопе. Отменить запись можно в любой момент.</p>
+    </aside>
+  </section>
+
+  <section id="my" class="my">
+    <h2>Мои записи</h2>
+    <p class="hint">Записи хранятся в этом браузере.</p>
+    <ul id="list" class="list"></ul>
+  </section>
+</main>
+
+<footer id="contacts">
+  <div id="contactInfo"></div>
+  <small id="copy"></small>
+</footer>
+
+<dialog id="done">
+  <h2>Вы записаны!</h2>
+  <p id="doneText"></p>
+  <p class="code">Код записи: <b id="doneCode"></b></p>
+  <button class="btn" id="doneClose">Отлично</button>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
